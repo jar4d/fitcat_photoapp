@@ -1,0 +1,63 @@
+<head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div>
+		{{>loginButtons}}
+	</div>
+	
+    <div id="notes-input">
+      <input class="btn btn-primary" type="button" id="take-photo" value="Take a photo and share it!">
+
+      <form>
+        <div class="form-group">
+          <label for="Message">Or, enter a note</label>
+          <input type="text" class="form-control" id="message-input" placeholder="Type a text note">
+        </div>
+        <button type="submit" class="btn btn-info">Save</button>
+      </form>
+    </div>
+
+{{#each notes}}
+	{{>note}}
+{{/each}}
+
+</body>
+
+
+
+
+
+
+
+
+
+<template name="note">
+  <div class="card" id={{_id}}>
+
+    {{#if photo}}
+      <div class="card-image">
+        <img src="{{photo}}" alt="Loading image...">
+        <h3 class="card-image-headline">Photo taken by {{userName}}</h3>
+      </div>
+      <div class="card-body"></div>
+    {{else}}
+      <div class="card-body">
+        <h3>{{note}}</h3>
+      </div>
+    {{/if}}
+
+    <footer class="card-footer">
+      <div class="row">
+        <div class="col-xs-11">
+          {{userName}}, {{livestamp timestamp}}
+        </div>
+        <div class="col-xs-1">
+          <a class="delete" href="#">Delete</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</template>
