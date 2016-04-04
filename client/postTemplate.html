@@ -1,0 +1,49 @@
+<template name="post">
+	<div class="card-image">
+
+	    <div class="col col s12 m4 l3 margin" id={{_id}}>
+	        <div class="blog-card" >
+	        <div class="card">
+	            <div class="card-image waves-effect waves-block waves-light">
+        			<img src="{{photo}}" alt="Loading image...">
+	            </div>
+	            <ul class="card-action-buttons">
+		        <!--        <li><a class="btn-floating waves-effect waves-light cyan"><i class="mdi-social-share"></i></a>
+		                </li>                            
+		                <li><a class="btn-floating waves-effect waves-light green accent-4"><i class="mdi-av-repeat"></i></a>
+		                    </li>
+		        -->            
+	                <li><a class="btn-floating waves-effect waves-light pink accent-2"><i class="mdi-action-favorite"></i></a>
+	                    </li>
+	                <li><a class="btn-floating waves-effect waves-light light-blue"><i class="mdi-action-info activator"></i></a>
+	                    </li>
+	            </ul>
+
+	            
+	            <div class="card-content">
+	                <p class="row">
+	                  <span class="left"><a href="#">{{photoTag}}</a></span>
+	                  <span class="right">{{livestamp timestamp}}</span>
+	                </p>
+	                <h4 class="card-title grey-text text-darken-4"><a href="#" class="grey-text text-darken-4">{{photoCaption}}</a>
+	                </h4>                                        
+	                <div class="row">
+	                  <div class="col s2">
+	                    <img src="/img/1.jpeg" alt="" class="circle responsive-img valign profile-image">
+	                  </div>
+	                  <div class="col s9"> By <a href="#">{{userName}}</a></div>
+	                </div>
+	                <!-- badges here maybe??-->
+	            </div>
+
+	            <div class="card-reveal">
+	                <span class="card-title grey-text text-darken-4"><i class="mdi-navigation-close right"></i> {{photoCaption}}</span>
+	                <p>Here is some more information about this blog that is only revealed once clicked on.</p>
+	            </div>
+	        </div>
+	        </div>
+	    </div>
+	</div>
+	<br>
+
+</template>

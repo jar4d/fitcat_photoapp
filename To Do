@@ -5,8 +5,8 @@ To Do
 * Reinterpret security so it makes sense
 * reskin with materialize
 * integrate with admin board. *can you have an html section for app only??*
-
-
-1. take photo
-2. add text
-3. submit
+* user login and create a profile
+* tart posts
+* take picture button
+* nav button update
+* can you pull a picture in via FB/Meteor.users?

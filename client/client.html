@@ -2,62 +2,60 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
-	<div>
-		{{>loginButtons}}
-	</div>
+<body class="grey">
 	
-    <div id="notes-input">
-      <input class="btn btn-primary" type="button" id="take-photo" value="Take a photo and share it!">
-
-      <form>
-        <div class="form-group">
-          <label for="Message">Or, enter a note</label>
-          <input type="text" class="form-control" id="message-input" placeholder="Type a text note">
-        </div>
-        <button type="submit" class="btn btn-info">Save</button>
-      </form>
-    </div>
-
-{{#each notes}}
-	{{>note}}
-{{/each}}
-
 </body>
 
 
 
+<template name="feed">
+
+	<div>
+		{{>loginButtons}}
+	</div>
+
+	
+
+	{{#each posts}}
+		{{>post}}
+	{{/each}}
+
+            <div id="take-photo" class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                <a class="btn-floating btn-large pink">
+                  <i class="large mdi-image-camera-alt"></i>
+                </a>
+                <!--
+                <ul>
+                  <li><a href="#" class="btn-floating red"><i class="mdi-action-account-circle"></i></a></li>
+                  <li><a href="#" class="btn-floating yellow darken-1"><i class="mdi-action-settings-overscan"></i></a></li>
+                  <li><a href="#" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
+                  <li><a href="#" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+                </ul>
+                -->
+            </div>
 
 
-
-
-
-
-<template name="note">
-  <div class="card" id={{_id}}>
-
-    {{#if photo}}
-      <div class="card-image">
-        <img src="{{photo}}" alt="Loading image...">
-        <h3 class="card-image-headline">Photo taken by {{userName}}</h3>
-      </div>
-      <div class="card-body"></div>
-    {{else}}
-      <div class="card-body">
-        <h3>{{note}}</h3>
-      </div>
-    {{/if}}
-
-    <footer class="card-footer">
-      <div class="row">
-        <div class="col-xs-11">
-          {{userName}}, {{livestamp timestamp}}
-        </div>
-        <div class="col-xs-1">
-          <a class="delete" href="#">Delete</a>
-        </div>
-      </div>
-    </footer>
-
-  </div>
 </template>
+
+
+<template name="takephotopage">
+
+<div class="card-image">
+    <img src="{{photoPreview}}" alt="Loading image...">
+</div>
+
+    <div>
+      <form>
+        <div class="form-group">
+          <label for="Message">Tag it</label>
+          <input type="text" class="form-control" id="photoTag" placeholder="Separate tags with a space">
+
+          <label for="Message">Tell us</label>
+          <input type="text" class="form-control" id="photoCaption" placeholder="Give your picture some words...">
+        </div>
+        <button type="submit" class="btn btn-primary">Go!</button>
+      </form>
+    </div>
+
+</template>
+

@@ -6,8 +6,8 @@ function isAdmin(userId) {
 
 Meteor.startup(function () {
 
-  Meteor.publish('notes', function () {
-    return Notes.find(
+  Meteor.publish('posts', function () {
+    return Posts.find(
       { },
       {
         sort: { timestamp: -1 }
@@ -16,7 +16,7 @@ Meteor.startup(function () {
   });
 
   // Server-side security
-  Notes.allow({
+  Posts.allow({
     // allows only those signed in to post, but everyone to view.
     insert: function (userId, doc) {
       if(userId && doc.userId === userId){
@@ -31,12 +31,31 @@ Meteor.startup(function () {
 
     },
     update: function (userId, doc, fields, modifier) {
-      return userId && doc.userId === userId || isAdmin(userId);
+
+      if(userId && doc.userId === userId){
+        return true;        
+      }
+      else if(isAdmin(userId)){
+        return true;
+      }
+      else{
+        return false;
+      }
+
     },
     remove: function (userId, doc) {
       // can only remove your own notes
-      return userId && doc.userId === userId || isAdmin(userId);
+      if(userId && doc.userId === userId){
+        return true;        
+      }
+      else if(isAdmin(userId)){
+        return true;
+      }
+      else{
+        return false;
+      }
     }
+    
   });
 
   // Global API configuration
@@ -46,5 +65,5 @@ Meteor.startup(function () {
 
   // Generates: GET, POST on /api/notes and GET, PUT, DELETE on
   // /api/notes/:id for the Notes collection
-  Api.addCollection(Notes);
+  Api.addCollection(Posts);
 });
