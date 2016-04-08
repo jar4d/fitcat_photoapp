@@ -1,0 +1,62 @@
+<template name="register">
+
+<container id="registerContainer">
+<div id="register-page" class="row">
+    <div class="col s12 z-depth-4 card-panel">
+      <form class="login-form">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <h4>Create an account</h4>
+            <p class="center">-</p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="username" type="text">
+            <label for="username" class="center-align">Username</label>
+
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-communication-email prefix"></i>
+            <input id="email" type="email">
+            <label for="email" class="center-align">Email</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password" type="password">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="passwordAgain" type="password">
+            <label for="passwordAgain">Password again</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12 center">
+          <div class="col s6">
+            <button type="reset" class="btn grey">Cancel</button>
+          </div>
+          <div class="col s6">
+            <button type="submit" class="btn indigo">Submit</button>
+          </div>
+
+
+          </div>
+          <div class="input-field col s12">
+            <p class="margin center medium-small sign-up"><h6>Please check your email to verify your account before signing in.</h6></p>
+            <p class="margin center medium-small sign-up">Already a member? <a href="/login">Login</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</container>
+</template>

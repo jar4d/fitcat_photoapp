@@ -2,7 +2,7 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body class="grey">
+<body class="">
 	
 </body>
 
@@ -39,20 +39,30 @@
 
 
 <template name="takephotopage">
-
+<div class="col s12">
+<div class="row">
 <div class="card-image">
     <img src="{{photoPreview}}" alt="Loading image...">
 </div>
-
+</div>
+</div>
     <div>
-      <form>
-        <div class="form-group">
-          <label for="Message">Tag it</label>
-          <input type="text" class="form-control" id="photoTag" placeholder="Separate tags with a space">
+    <form class="col s12">
 
+          <div class="row">
+          <div class="input-field col s12">        
+          <label for="Message">Tag it</label>
+          <input type="text" class="form-control" id="photoTag" placeholder="">
+          </div>
+          </div>
+
+          <div class="row">
+          <div class="input-field col s12">
           <label for="Message">Tell us</label>
-          <input type="text" class="form-control" id="photoCaption" placeholder="Give your picture some words...">
-        </div>
+          <textarea id="photoCaption" class="materialize-textarea" placeholder="" length="120"></textarea>
+          </div>
+          </div>
+
         <button type="submit" class="btn btn-primary">Go!</button>
       </form>
     </div>

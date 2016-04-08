@@ -1,0 +1,47 @@
+<template name="login">
+<container id="containerLogin">
+<div id="login-page" class="row">
+    <div class="col s12 z-depth-4 card-panel">
+      <form class="login-form">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <h4>Login</h4>
+            <p class="center">-</p>
+          </div>
+        </div>
+        
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-communication-email prefix"></i>
+            <input id="email" type="email">
+            <label for="email" class="center-align">Email</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password" type="password">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        
+        <div class="row margin">
+          <div class="input-field col s12 center">
+          <div class="col s6">
+            <button type="reset" class="btn grey">Cancel</button>
+          </div>
+          <div class="col s6">
+            <button type="submit" class="btn indigo">Submit</button>
+          </div>
+
+
+          </div>
+          <div class="input-field col s12">
+            <p class="margin center medium-small sign-up">New to the site?<a href="/register" class="to_register"> Create Account </a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</container>
+  </template>
