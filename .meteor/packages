@@ -30,3 +30,8 @@ materialize:materialize
 nimble:restivus
 standard-minifier-css
 standard-minifier-js
+cfs:standard-packages
+cfs:gridfs
+raix:ui-dropped-event
+tomi:upload-server
+tomi:upload-jquery

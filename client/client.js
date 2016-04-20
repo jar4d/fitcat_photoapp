@@ -5,6 +5,8 @@ var cameraOptions = {
   height: 600
 };
 
+Session.set('photo',false);
+
 
 Template.navTemplate.onRendered(function () {
   $('.sideMenuButton').sideNav({ 
@@ -17,13 +19,26 @@ Template.navTemplate.helpers({
     var user = Meteor.user();
     return user.emails[0].address; //change this...
   }
-})
+});
+
+Template.register.helpers({
+  profileImage: function(){
+    var image = Session.get('photo');
+    if(image == false){
+      return "/img/1.jpeg"; //a holding image
+    }else{
+      return image;
+    }
+  }
+});
 
 
 Template.register.events({
     'submit form': function(event){
         event.preventDefault();
-        var usernameVar = event.target.username.value;        
+        var profileImageVar = Session.get('photo');
+        var usernameVar = event.target.username.value; 
+        var catNameVar = event.target.catName.value;       
         var emailVar = event.target.email.value;
         var passwordVar = event.target.password.value;
         var passwordVar2 = event.target.passwordAgain.value;
@@ -32,10 +47,13 @@ Template.register.events({
           console.log("Form submitted.");
 
       Accounts.createUser({
+        profileImage: profileImageVar,
         username: usernameVar,
+        catName: catNameVar,
         email: emailVar,
         password: passwordVar
       });
+      Router.go('/');
 
       return Session.get('isAdmin');
         }else{
@@ -43,7 +61,21 @@ Template.register.events({
 
         }
 
-    }
+    },
+
+  'click #take-photo': function () {
+    MeteorCamera.getPicture(cameraOptions, function (error, data) {
+          if (error) {
+            // e.g. camera permission denied, or unsupported browser (Safari on iOS, looking at you)
+            console.log(error);
+          } else {
+              Session.set('photo', data);
+
+          }
+        });
+  }
+
+
 });
 
 Template.login.events({
@@ -80,6 +112,10 @@ Template.login.events({
 Template.feed.helpers({
   posts: function () {
     return Posts.find( {},{sort: { timestamp: -1 }} );
+  },
+  profileImage: function(){
+    var user = Meteor.user();
+    return user.profileImage;
   }
 });
 

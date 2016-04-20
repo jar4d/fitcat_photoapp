@@ -1,12 +1,23 @@
 To Do
 
+* convert DBs to collections
+* add profileimage DB
+* figure image size issue
+* preload images, loading screen
+
 * fix security. See here: https://www.discovermeteor.com/blog/allow-deny-a-security-primer/
 
+* Facebook login
+* fix "name + cat" as username (not used for signin)
+* Add additional info
+* Love list
 * Reinterpret security so it makes sense
-* reskin with materialize
-* integrate with admin board. *can you have an html section for app only??*
 * user login and create a profile
 * tart posts
 * take picture button
 * nav button update
 * can you pull a picture in via FB/Meteor.users?
+
+
+USER RULES
+-	
