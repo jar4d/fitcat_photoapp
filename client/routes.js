@@ -3,11 +3,7 @@ Router.configure({
 });
 
 Router.route('/',{
-	name: 'feed'
-}); 
-
-Router.route('/profile',{
-	name: 'profile'
+	name: 'activity'
 }); 
 
 Router.route('/register',{
@@ -16,8 +12,4 @@ Router.route('/register',{
 
 Router.route('/login',{
 	name: 'login'
-}); 
-
-Router.route('/takephotopage',{
-	name: 'takephotopage'
 }); 

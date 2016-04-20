@@ -1,5 +1,6 @@
 Meteor.subscribe('posts');
 
+<<<<<<< HEAD
 var cameraOptions = {
   width: 600,
   height: 600
@@ -7,6 +8,8 @@ var cameraOptions = {
 
 Session.set('photo',false);
 
+=======
+>>>>>>> origin/photosplustext
 
 Template.navTemplate.onRendered(function () {
   $('.sideMenuButton').sideNav({ 
@@ -109,6 +112,7 @@ Template.login.events({
 });
 
 
+<<<<<<< HEAD
 Template.feed.helpers({
   posts: function () {
     return Posts.find( {},{sort: { timestamp: -1 }} );
@@ -212,3 +216,5 @@ Template.takephotopage.events({
 
 
 
+=======
+>>>>>>> origin/photosplustext
