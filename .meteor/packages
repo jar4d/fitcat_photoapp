@@ -35,3 +35,4 @@ cfs:gridfs
 raix:ui-dropped-event
 tomi:upload-server
 tomi:upload-jquery
+pcel:loading

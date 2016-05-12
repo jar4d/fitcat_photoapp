@@ -1,6 +1,5 @@
 Meteor.subscribe('posts');
 
-<<<<<<< HEAD
 var cameraOptions = {
   width: 600,
   height: 600
@@ -8,8 +7,7 @@ var cameraOptions = {
 
 Session.set('photo',false);
 
-=======
->>>>>>> origin/photosplustext
+//>>>>>>> origin/photosplustext
 
 Template.navTemplate.onRendered(function () {
   $('.sideMenuButton').sideNav({ 
@@ -112,7 +110,7 @@ Template.login.events({
 });
 
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 Template.feed.helpers({
   posts: function () {
     return Posts.find( {},{sort: { timestamp: -1 }} );
@@ -123,6 +121,7 @@ Template.feed.helpers({
   }
 });
 
+/*
 Template.profile.helpers({
 
   profileDetails: function () {
@@ -141,7 +140,7 @@ Template.profile.helpers({
   }
 
 });
-
+*/
 
 function userName() {
   var user = Meteor.user();
@@ -214,7 +213,27 @@ Template.takephotopage.events({
 });
 
 
+Template.loading.rendered = function () {
+  if ( ! Session.get('loadingSplash') ) {
+    this.loading = window.pleaseWait({
+      logo: '/logo.png',
+      backgroundColor: '#ff0066',
+      loadingHtml: spinner
+    });
+    Session.set('loadingSplash', true); // just show loading splash once
+  }
+};
+
+Template.loading.destroyed = function () {
+  if ( this.loading ) {
+    this.loading.finish();
+  }
+};
+
+var message = '<p class="loading-message">Loading Message</p>';
+var spinner = '<div class="sk-spinner sk-spinner-pulse"></div>';
 
 
-=======
->>>>>>> origin/photosplustext
+
+//=======
+//>>>>>>> origin/photosplustext

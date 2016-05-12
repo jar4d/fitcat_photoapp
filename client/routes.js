@@ -3,7 +3,7 @@ Router.configure({
 });
 
 Router.route('/',{
-	name: 'activity'
+	name: 'feed'
 }); 
 
 Router.route('/register',{
